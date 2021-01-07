@@ -108,6 +108,7 @@ const Login: React.FC<Props> = ({ onSubmit, loading, status }) => {
                     color="error"
                     variant="caption"
                     component="span"
+                    data-testid="login-status-message"
                   >
                     {status}
                   </Typography>

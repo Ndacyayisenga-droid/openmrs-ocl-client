@@ -156,8 +156,6 @@ export const createActionThunk = <T extends any[]>(
         } catch (error) {
           debug(error, "redux/utils/#createActionThunk#:catch");
 
-
-
           const response = error.response;
 
           let errorMsg = errorMsgResponse(response);

@@ -69,3 +69,8 @@ store.subscribe(() => {
 });
 
 export default store;
+
+// required for integration tests
+if ('Cypress' in window) {
+  (window as any).store = store;
+}

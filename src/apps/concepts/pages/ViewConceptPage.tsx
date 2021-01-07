@@ -7,7 +7,6 @@ import {APIConcept, apiConceptToConcept, APIMapping} from "../types";
 import {useLocation, useParams} from "react-router";
 import {connect} from "react-redux";
 import Header from "../../../components/Header";
-import {startCase, toLower} from "lodash";
 import {APIOrg, APIProfile, canModifyContainer, profileSelector} from "../../authentication";
 import {orgsSelector} from "../../authentication/redux/reducer";
 import {CONTEXT, ProgressOverlay, useQueryParams} from "../../../utils";
@@ -54,9 +53,8 @@ const ViewConceptPage: React.FC<Props> = ({
   return (
     <Header
       allowImplicitNavigation
-      title={startCase(
-        toLower(concept ? concept.display_name : "View concept")
-      )}
+      title={concept && concept.display_name ?
+        concept.display_name : "View concept"}
     >
       <ProgressOverlay
         delayRender

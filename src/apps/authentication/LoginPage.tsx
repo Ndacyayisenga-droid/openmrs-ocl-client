@@ -5,6 +5,7 @@ import { Login } from "./components";
 import { connect } from "react-redux";
 import { authErrorsSelector, authLoadingSelector } from "./redux/reducer";
 import { loginAction } from "./redux";
+import { AppState } from "../../redux";
 
 interface Props {
   isLoggedIn: boolean;
@@ -29,7 +30,7 @@ const LoginPage: React.FC<Props> = ({
   login,
   loading,
   errors 
-}: Props) => {
+}) => {
   const classes = useStyles();
 
   useEffect(() => {
@@ -73,11 +74,11 @@ const LoginPage: React.FC<Props> = ({
     );
 };
 
-const mapStateToProps = (state: any) => ({
+const mapStateToProps = (state: AppState) => ({
   isLoggedIn: state.auth.isLoggedIn,
   loading: authLoadingSelector(state),
   errors: authErrorsSelector(state)
 });
-const mapDispatchToProps = { login: loginAction };
+const mapActionsToProps = { login: loginAction };
 
-export default connect(mapStateToProps, mapDispatchToProps)(LoginPage);
+export default connect(mapStateToProps, mapActionsToProps)(LoginPage);

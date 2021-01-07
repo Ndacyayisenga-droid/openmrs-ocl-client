@@ -17,6 +17,11 @@ ADD . /usr/src/app/
 # Set environment to production
 ENV NODE_ENV production
 
+# Set the environment variables actually used in the image
+ENV REACT_APP_OCL_API_HOST https://api.qa.openconceptlab.org/
+
+ENV REACT_APP_TRADITIONAL_OCL_HOST https://qa.openconceptlab.org
+
 # Install the project dependencies
 RUN npm install
 
