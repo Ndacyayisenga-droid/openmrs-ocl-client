@@ -5,5 +5,6 @@ declare namespace Cypress {
     login(username?: string, password?: string): Chainable<Subject>
     logout(): Chainable<Subject>
     createDictionary(username?: string, dictionary?: string): Chainable<string>
+    deleteDictionary(dictionary: string, username?: string): Chainable<Subject>
   }
 }

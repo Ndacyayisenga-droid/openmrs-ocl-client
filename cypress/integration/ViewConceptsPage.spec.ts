@@ -22,7 +22,10 @@ describe("View Concepts Page", () => {
     cy.createDictionary().then((id) => dictionaryId = id);
   });
 
-  afterEach(() => dictionaryId = "");
+  afterEach(() => {
+    cy.deleteDictionary(dictionary = dictionaryId);
+    dictionaryId = ""
+  });
 
   // it("Should allow retrieving, sorting, filtering concepts", () => {
   //   cy.findByTitle(TEXT.ADD_CONCEPTS).click();

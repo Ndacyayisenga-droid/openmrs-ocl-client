@@ -67,3 +67,17 @@ Cypress.Commands.add('createDictionary', (
 
   return cy.wrap(dictionary);
 });
+
+Cypress.Commands.add('deleteDictionary', (
+    dictionary,
+    username = Cypress.env('USERNAME') || 'admin'
+  ) => {
+
+  cy.request({
+    method: 'DELETE',
+    headers: {
+      'Authorization': `Token ${getStore().getState().auth.token}`
+    },
+    url: `${apiUrl}/usrs/${username}/collections/${dictionary}`
+  });
+});
