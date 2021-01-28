@@ -74,11 +74,10 @@
     ]
   },
   "devDependencies": {
-    "@cypress/webpack-preprocessor": "^5.4.11",
-    "@testing-library/cypress": "^7.0.1",
+    "@testing-library/cypress": "^7.0.3",
     "@testing-library/jest-dom": "^5.11.6",
     "@types/jest": "24.0.18",
-    "cypress": "^5.6.0",
+    "cypress": "^6.3.0",
     "eslint-plugin-cypress": "^2.11.2",
     "jest-junit": "^10.0.0",
     "nanoid": "^3.1.16",
